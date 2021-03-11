@@ -1,25 +1,38 @@
 import React, { useState } from 'react'
 
-const Blogform = ({ blogs, setBlogs }) => {
+const Blogform = ({ onSubmit }) => {
 
-  let [blog, setBlog] = useState({
+  let [input, setInput] = useState({
     title: '',
     blog: '',
   })
 
+
   let handleChange = e => {
     let value = e.target.value;
-    setBlog({
-      ...blog, 
-      [e.target.name]: value})
-    console.log(blog)
+    setInput({
+      ...input, 
+      [e.target.name]: value
+    })
   }
+
+  let today = new Date();
+  let seconds = today.getDate() + '-' + today.getMinutes() + ':' + today.getSeconds();
 
   let handleSubmit = e => {
     e.preventDefault()
-    console.log("submitted")
-  }
 
+    onSubmit({
+      id: seconds,
+      title: input.title,
+      blog: input.blog
+    })
+
+    setInput({
+      title:'',
+      blog:''
+    })
+  }
 
   return (
     <div>
@@ -29,7 +42,7 @@ const Blogform = ({ blogs, setBlogs }) => {
           type="text"
           name="title"
           placeholder="Add Title"
-          value={blog.title}
+          value={input.title}
           onChange={handleChange}
         />
         <input
@@ -37,12 +50,11 @@ const Blogform = ({ blogs, setBlogs }) => {
           type="text"
           name="blog"
           placeholder="Add Blog"
-          value={blog.blog}
+          value={input.blog}
           onChange={handleChange}
         />
         <button className='blog-button'>Add</button>
       </form>
-      
     </div>
   )
 }

@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
-import Form from '../test';
 import Blogform from './Blogform'
 
 const Bloglist = () => {
-  const [blogs, setBlogs] = useState({
-    title: '',
-    blog: '',
-  });
+  const [blogs, setBlogs] = useState([]);
+
+  console.log(blogs)
+
+  const handleSubmit = blog => {
+    const newBlog = [blog, ...blogs]
+    console.log(blog)
+
+    setBlogs(newBlog);
+  }
 
   return (
     <div>
       <Blogform 
-      blogs={blogs}
-      setBlogs={setBlogs}/>
-
-      <Form/>
-      
+      onSubmit={handleSubmit}/>
     </div>
   )
 }
