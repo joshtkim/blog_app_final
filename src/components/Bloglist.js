@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Form from '../test';
 import Blogform from './Blogform'
 
 const Bloglist = () => {
+  const [blogs, setBlogs] = useState({
+    title: '',
+    blog: '',
+  });
+
   return (
     <div>
-      <Blogform />
+      <Blogform 
+      blogs={blogs}
+      setBlogs={setBlogs}/>
+
+      <Form/>
       
     </div>
   )
