@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Blogform from './Blogform'
+import Blog from './Blog'
 
 const Bloglist = () => {
   const [blogs, setBlogs] = useState([]);
@@ -17,6 +18,9 @@ const Bloglist = () => {
     <div>
       <Blogform 
       onSubmit={handleSubmit}/>
+      <Blog 
+        blogs={blogs}
+      />
     </div>
   )
 }
