@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+} 
+
+.blog-card {
+  border: 2px solid black;
+  width: 100px;
+}

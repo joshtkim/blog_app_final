@@ -1,9 +1,10 @@
 import React from 'react';
 import Bloglist from './components/Bloglist';
+import './App.css';
 
 let App = () => {
   return (
-    <div className="App">
+    <div className="app">
       Hello
       <Bloglist />
     </div>
