@@ -2,13 +2,14 @@ import React from 'react'
 
 const Blog = ({ blogs }) => {
   
+  console.log(blogs)
   
-  return blogs.map((blog) => {
+  return blogs.map((blog) => (
     <div>
-      {blog.title}
-      {blog.blog}
+      <header>{blog.title}</header>
+      <p>{blog.blog}</p>
     </div>
-  })
+  ));
 }
 
 export default Blog
