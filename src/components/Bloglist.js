@@ -18,9 +18,11 @@ const Bloglist = () => {
     <div>
       <Blogform 
       onSubmit={handleSubmit}/>
-      <Blog 
-        blogs={blogs}
-      />
+      <div className='blog'>
+        <Blog 
+          blogs={blogs}
+        />
+      </div>
     </div>
   )
 }
